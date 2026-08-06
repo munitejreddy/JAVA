@@ -1,15 +1,20 @@
-import java.util.Scanner;
-
 public class ass21 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter a number: ");
-        int num = sc.nextInt();
+        int[] arr = {1, 2, 3, 4, 5};
 
-        if (num % 2 == 0)
-            System.out.println("Even");
-        else
-            System.out.println("Odd");
+        int last = arr[arr.length - 1];
+
+        for (int i = arr.length - 1; i > 0; i--) {
+            arr[i] = arr[i - 1];
+        }
+
+        arr[0] = last;
+
+        System.out.print("Right Rotation: ");
+
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
     }
 }

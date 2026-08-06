@@ -1,32 +1,25 @@
-import java.util.Scanner;
-
 public class ass24 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        double a, b;
+        int[] arr = {5, 2, 8, 1, 3};
 
-        System.out.print("Enter first number: ");
-        a = sc.nextDouble();
+        for (int i = 0; i < arr.length - 1; i++) {
 
-        System.out.print("Enter second number: ");
-        b = sc.nextDouble();
+            for (int j = i + 1; j < arr.length; j++) {
 
-        System.out.print("Enter operator (+,-,*,/): ");
-        char op = sc.next().charAt(0);
+                if (arr[i] < arr[j]) {
 
-        if (op == '+')
-            System.out.println("Result = " + (a + b));
-        else if (op == '-')
-            System.out.println("Result = " + (a - b));
-        else if (op == '*')
-            System.out.println("Result = " + (a * b));
-        else if (op == '/') {
-            if (b != 0)
-                System.out.println("Result = " + (a / b));
-            else
-                System.out.println("Division by zero not possible");
-        } else
-            System.out.println("Invalid Operator");
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+
+        System.out.print("Descending Order: ");
+
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
     }
 }

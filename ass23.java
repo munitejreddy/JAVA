@@ -1,22 +1,25 @@
-import java.util.Scanner;
-
 public class ass23 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        double P, T, R, SI;
+        int[] arr = {5, 2, 8, 1, 3};
 
-        System.out.print("Enter Principal: ");
-        P = sc.nextDouble();
+        for (int i = 0; i < arr.length - 1; i++) {
 
-        System.out.print("Enter Time: ");
-        T = sc.nextDouble();
+            for (int j = i + 1; j < arr.length; j++) {
 
-        System.out.print("Enter Rate: ");
-        R = sc.nextDouble();
+                if (arr[i] > arr[j]) {
 
-        SI = (P * T * R) / 100;
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
 
-        System.out.println("Simple Interest = " + SI);
+        System.out.print("Ascending Order: ");
+
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
     }
 }

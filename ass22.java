@@ -1,12 +1,26 @@
-import java.util.Scanner;
-
 public class ass22 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter your name: ");
-        String name = sc.nextLine();
+        int[] arr = {2, 3, 2, 5, 3, 2};
 
-        System.out.println("Hello, " + name + "! Welcome.");
+        boolean[] visited = new boolean[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+
+            if (visited[i])
+                continue;
+
+            int count = 1;
+
+            for (int j = i + 1; j < arr.length; j++) {
+
+                if (arr[i] == arr[j]) {
+                    count++;
+                    visited[j] = true;
+                }
+            }
+
+            System.out.println(arr[i] + " occurs " + count + " times");
+        }
     }
 }
